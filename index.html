@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tomi's Calculator</title>
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+      </style>
+      
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+        .functionBtn-style{
+          @apply btn-style  bg-[#F69906]  text-white  ;
+        }
+.numberBtn-style{
+  @apply btn-style bg-[#313131] text-white;
+}
+
+.btn-style{
+  @apply rounded-full h-16 w-16 text-lg font-bold hover:scale-105 active:scale-100 hover:opacity-75;
+      }
+    }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+        'myfont': ['Comfortaa'],
+      },
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="flex items-center justify-center h-screen bg-[#CBCBCB] font-myfont ">
+    <div class="card bg-black h-[70%] p-4 rounded-3xl flex flex-col gap-8 ">
+      <div class="display flex flex-col text-white gap-4 pt-8">
+        <input topDisplay class=" bg-black text-right text-xl opacity-90" type="text" value="419" disabled />
+        <input buttomDisplay class=" bg-black text-right text-3xl" type="text" value="0" disabled />
+      </div>
+      <div class="functionBtn grid gap-4 grid-cols-4 grid-rows-5 gap-4 text-center justify-center">
+        <button clear class="rounded-full bg-[#a0a0a0] h-16 w-16 text-white text-lg hover:scale-105 active:scale-100 hover:opacity-75" >AC</button>
+        <button backSpace class="rounded-full bg-[#a0a0a0] h-16 w-16 text-white text-lg hover:scale-105 active:scale-100 hover:opacity-75" ></button>
+        <button functionBtn class="rounded-full bg-[#a0a0a0] h-16 w-16 text-white text-lg hover:scale-105 active:scale-100 hover:opacity-75" >%</button>
+        <button functionBtn class="rounded-full bg-[#a0a0a0] h-16 w-16 text-white text-lg hover:scale-105 active:scale-100 hover:opacity-75" >÷</button>
+
+        <button numberBtn class="numberBtn-style">7</button>
+        <button numberBtn class="numberBtn-style">8</button>
+        <button numberBtn class="numberBtn-style" >9</button>
+        <button functionBtn class="functionBtn-style" >x</button>
+        <button numberBtn class="numberBtn-style">4</button>
+        <button numberBtn class="numberBtn-style" >5</button>
+        <button numberBtn class="numberBtn-style">6</button>
+        <button functionBtn class="functionBtn-style" >-</button>
+        <button numberBtn class="numberBtn-style"  >1</button>
+        <button numberBtn class="numberBtn-style" >2</button>
+        <button numberBtn class="numberBtn-style" >3</button>
+        <button functionBtn class="functionBtn-style" >+</button>
+        <button numberBtn class="col-span-2 rounded-full bg-[#313131] h-16 text-white text-lg text-left pl-6 hover:scale-105 active:scale-100 hover:opacity-75" >0</button>
+        <button numberBtn class="numberBtn-style" >.</button>
+        <button equalsBtn class="functionBtn-style" >=</button>
+
+
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
