@@ -2,6 +2,7 @@ const numberBtn = document.querySelectorAll('[numberBtn]')
 const buttomDisplay = document.querySelector('[buttomDisplay]')
 const clearBtn = document.querySelector('[clear]')
 const topDisplay = document.querySelector('[topDisplay]')
+const backSpaceBtn = document.querySelector('[backSpace]')
 
 numberBtn.forEach(number =>{
     
@@ -24,4 +25,10 @@ function clearAll() {
     buttomDisplay.value = ''
     topDisplay.value = ''
 }
+backSpaceBtn.onclick = backspace
+function backspace() {
+    if(buttomDisplay.value == '') return
+    buttomDisplay.value = buttomDisplay.value.slice(0, -1)
+}
+
 console.log(buttomDisplay.value)
